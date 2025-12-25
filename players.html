@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta data-rh="true" name="keywords"
+        content="布吉岛玩家数据,玩家数据排行榜,起床战争(4队4人)拆床总榜[端游],起床战争(经验8队4人)拆床总榜[端游],起床战争(4队4人)胜利日榜[端游]">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="short icon" href="images/icon.ico" type="image/x-icon">
+    <title>Domcer - 玩家数据</title>
+</head>
+
+<body>
+    <header>
+        <div class="navigationBar">
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">首页</a>
+                <a href="players.html" class="nav-link">玩家数据查询</a>
+                <a href="guild.html" class="nav-link">公会数据查询</a>
+                <a href="record.html" class="nav-link">玩家战绩查询</a>
+                <a href="ranking.html" class="nav-link">排行榜</a>
+            </div>
+            <div class="right-group">
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="搜索页面..." autocomplete="off">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <div id="searchDropdown" class="dropdown-content"></div>
+                </div>
+                <button class="btn" id="theme-toggle" aria-label="切换主题">
+                    <img src="images/sun.png" alt="切换主题" width="36" height="36" id="themeIcon">
+                </button>
+            </div>
+        </div>
+    </header>
+    <main class="player-main">
+        <div class="player-content-wrapper">
+            <div class="carousel-section reveal">
+                <div class="resource-card reveal carousel-card">
+                    <h3>知道吗？其实DoMCer曾经也是一个很好玩的服务器哦...</h3>
+                    <div class="carousel-upload-row">
+                    </div>
+                    <div class="carousel" data-carousel>
+                        <button class="carousel-btn prev" type="button" aria-label="上一张">‹</button>
+                        <div class="carousel-viewport">
+                            <div class="carousel-track">
+                                <div class="carousel-slide">
+                                    <img src="images/lunbo1.jpg" alt="轮播图 1">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="images/lunbo2.png" alt="轮播图 2">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="images/lunbo3.png" alt="轮播图 3">
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-btn next" type="button" aria-label="下一张">›</button>
+                        <div class="carousel-dots" aria-label="轮播图指示点"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="main_title reveal" style="position:relative;">
+                <div class="danmu-container"></div>
+                <h1>玩家数据查询</h1>
+                <h2>可查询个人的各项数据排行</h2>
+                <div class="resource-grid stack reveal">
+                    <div class="resource-card reveal">
+                        <img src="images/golden_app.png" alt="钻石剑图标" width="56" height="56">
+                        <h1>DoMCer - 玩家个人数据</h1>
+                        <h3>玩家实例查询</h3>
+                        <div class="player-search-box">
+                            <input type="text" id="playerName" placeholder="输入玩家名称">
+                            <button id="searchBtn">查询</button>
+                        </div>
+                        <div id="playerInfo"></div>
+                        <br>
+                        <h3>使用UUID查询</h3>
+                        <div class="player-search-box">
+                            <input type="text" id="playerUUID" placeholder="输入玩家UUID">
+                            <button id="searchBtn_3">查询</button>
+                        </div>
+                        <div id="playerInfo_3"></div>
+                    </div>
+                </div>
+                <div class="danmu-container"></div>
+            </div>
+        </div>
+
+        <div class="player-content-box-row">
+            <div class="players-left-box">
+                <img src="images/lobby.png" alt="DoMCer主城" id="lobby-img">
+            </div>
+            <div class="player-right-box">
+                <div class="player-test-box">
+                    <p>DoMCer服务器是一个Minecraft综合类服务器，其鼎盛时期竞争力与花雨庭抗衡</p>
+                    <p>服务器客户端累计下载量在2025年第四季度突破1,387,351</p>
+                    <p>在曾经有着非常多的玩家前来游玩服务器的顶尖内容：天坑大乱斗</p>
+                    <p>后来因为各种各样的问题：包括娱乐游戏的多元化、国内MC社区的萎缩、网易MC管理大滑坡等因素</p>
+                    <p>游玩网易MC网络服务器的玩家日益减少，D服在其中深受其害，希望D服在未来能重塑光荣</p>
+                    <img src="images/DoMCer-logotxt.png" alt="DoMCer服务器图标" width="400" height="100">
+                </div>
+            </div>
+        </div>
+        <script src="https://fastly.jsdelivr.net/npm/live2d-widgets@1.0.0/dist/autoload.js"></script>
+    </main>
+    <footer>
+        <div class="footer_content">
+
+            <div class="footer_box footer_left" id="leftfooter">
+                <h3>联系方式：</h3>
+                <p><i class="fa-brands fa-google" alt="Google" style="font-size: 17px; margin-right: 5px; gap: 100px">
+                        谷歌邮箱：</i></p>
+                <p>oldfourteen41@gmail.com</p>
+                <p><i class="fa-brands fa-qq" alt="QQ" style="font-size: 17px; margin-right: 5px; gap: 100px;"> QQ：</i>
+                </p>
+                <p>3474432820 / 1410146934</p>
+                <p><i class="fa-brands fa-bilibili" alt="Bilibili"
+                        style="font-size: 17px; margin-right: 5px; gap: 100px;"> 哔站链接：</i></p>
+                <p><a href="https://space.bilibili.com/470149931?spm_id_from=333.1007.0.0"
+                        class="bilibili-link">OldFourteenCN</a></p>
+            </div>
+
+            <div class="footer_box footer_center" id="centerfooter">
+                <h3>网站版权：</h3>
+                <p>本网站为非商用盈利性网站，所有功能均为DoMCer服务器官网API提供，仅做娱乐性质开发，无任何不良影响</p>
+                <p>本网站所有数据均来自于DoMCer服务器官网，不承担任何责任</p>
+            </div>
+
+            <div class="footer_box footer_right" id="rightfooter">
+                <h3>友情链接：</h3>
+                <p><a href="https://www.domcer.com/5th/" class="footer-link-1">DoMCer服务器官网</a></p>
+                <p><a href="https://www.minecraft.net/zh-hans" class="footer-link-2">Minecraft官网</a></p>
+                <p><a href="https://www.mcmod.cn/" class="footer-link-3">MCMOD官网</a></p>
+                <p><a href="https://www.minecraft.net/zh-hans/download" class="footer-link-4">Minecraft下载</a></p>
+            </div>
+        </div>
+    </footer>
+    <span class="js-cursor-container"></span>
+    <script src="js/app.js"></script>
+    <script src="js/mouseclick.js"></script>
+    <script src="js/mouseover.js"></script>
+</body>
+
+</html>

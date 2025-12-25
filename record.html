@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta data-rh="true" name="keywords"
+        content="布吉岛玩家数据,玩家数据排行榜,起床战争(4队4人)拆床总榜[端游],起床战争(经验8队4人)拆床总榜[端游],起床战争(4队4人)胜利日榜[端游]">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="short icon" href="images/icon.ico" type="image/x-icon">
+    <title>DoMCer - 战绩</title>
+</head>
+<style>
+    .vedio-box {
+        align-items: center;
+        flex: 1;
+        justify-content: center;
+    }
+</style>
+
+<body>
+    <header>
+        <div class="navigationBar">
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">首页</a>
+                <a href="players.html" class="nav-link">玩家数据查询</a>
+                <a href="guild.html" class="nav-link">公会数据查询</a>
+                <a href="record.html" class="nav-link">玩家战绩查询</a>
+                <a href="ranking.html" class="nav-link">排行榜</a>
+            </div>
+            <div class="right-group">
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="搜索页面..." autocomplete="off">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <div id="searchDropdown" class="dropdown-content"></div>
+                </div>
+                <button class="btn" id="theme-toggle" aria-label="切换主题">
+                    <img src="images/sun.png" alt="切换主题" width="36" height="36" id="themeIcon">
+                </button>
+            </div>
+        </div>
+    </header>
+    <main class="record-main">
+        <div class="video-bg-container">
+            <video class="bg-video" autoplay loop muted playsinline>
+                <source src="video/bedwars.mp4" type="video/mp4">
+                您的浏览器不支持 video 标签。
+            </video>
+            <div class="video-overlay"></div>
+        </div>
+        <div class="record-content-wrapper">
+            <div class="main_title reveal" style="position:relative; z-index: 2;">
+                <h1 id="recordTitle">玩家战绩查询</h1>
+                <h2 id="recordSubtitle">输入玩家UUID，查询最近比赛记录</h2>
+                <div class="resource-grid stack reveal">
+                    <div class="resource-card reveal">
+                        <img src="images/king.png" alt="赢家" width="56" height="56">
+                        <h1>DoMCer - 战绩查询</h1>
+                        <h3>起床战争 BedWas - 数据查询</h3>
+                        <div class="player-search-box">
+                            <input type="text" id="recordPlayerName" placeholder="输入玩家UUID">
+                            <button id="SearchBtn_4">查询</button>
+                        </div>
+                        <div id="recordInfo"></div>
+                    </div>
+
+                    <div class="resource-card reveal">
+                        <img src="images/brick_block.png" alt="砖块图标" width="56" height="56">
+                        <h1>DoMCer - 战绩查询</h1>
+                        <h3>超级战墙 UHC - 数据查询</h3>
+                        <div class="player-search-box">
+                            <input type="text" id="recordPlayerName_1" placeholder="输入玩家UUID">
+                            <button id="searchBtn_5">查询</button>
+                        </div>
+                        <div id="recordInfo_1"></div>
+                    </div>
+
+                    <div class="resource-card reveal">
+                        <img src="images/wood.png" alt="原木图标" width="56" height="56">
+                        <h1>DoMCer - 战绩查询</h1>
+                        <h3>战桥 Bridge - 数据查询</h3>
+                        <div class="player-search-box">
+                            <input type="text" id="recordPlayerName_2" placeholder="输入玩家UUID">
+                            <button id="searchBtn_6">查询</button>
+                        </div>
+                        <div id="recordInfo_2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://fastly.jsdelivr.net/npm/live2d-widgets@1.0.0/dist/autoload.js"></script>
+    </main>
+    <footer>
+        <div class="footer_content">
+            <div class="footer_box footer_left" id="leftfooter">
+                <h3>联系方式：</h3>
+                <p><i class="fa-brands fa-google" alt="Google"
+                        style="font-size: 17px; margin-right: 5px; gap: 100px">谷歌邮箱：</i></p>
+                <p>oldfourteen41@gmail.com</p>
+                <p><i class="fa-brands fa-qq" alt="QQ" style="font-size: 17px; margin-right: 5px; gap: 100px;"> QQ：</i>
+                </p>
+                <p>3474432820 / 1410146934</p>
+                <p><i class="fa-brands fa-bilibili" alt="Bilibili"
+                        style="font-size: 17px; margin-right: 5px; gap: 100px;"> 哔站链接：</i></p>
+                <p><a href="https://space.bilibili.com/470149931?spm_id_from=333.1007.0.0"
+                        class="bilibili-link">OldFourteenCN</a></p>
+            </div>
+            <div class="footer_box footer_center" id="centerfooter">
+                <h3>网站版权：</h3>
+                <p>本网站为非商用盈利性网站，所有功能均为DoMCer服务器官网API提供，仅做娱乐性质开发，无任何不良影响</p>
+                <p>本网站所有数据均来自于DoMCer服务器官网，不承担任何责任</p>
+            </div>
+            <div class="footer_box footer_right" id="rightfooter">
+                <h3>友情链接：</h3>
+                <p><a href="https://www.domcer.com/5th/" class="footer-link-1">DoMCer服务器官网</a></p>
+                <p><a href="https://www.minecraft.net/zh-hans" class="footer-link-2">Minecraft官网</a></p>
+                <p><a href="https://www.mcmod.cn/" class="footer-link-3">MCMOD官网</a></p>
+                <p><a href="https://www.minecraft.net/zh-hans/download" class="footer-link-4">Minecraft下载</a></p>
+            </div>
+        </div>
+    </footer>
+    <span class="js-cursor-container"></span>
+    <script src="js/app.js"></script>
+    <script src="js/mouseclick.js"></script>
+    <script src="js/mouseover.js"></script>
+</body>
+</html>

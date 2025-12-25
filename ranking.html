@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta data-rh="true" name="keywords"
+        content="布吉岛玩家数据,玩家数据排行榜,起床战争(4队4人)拆床总榜[端游],起床战争(经验8队4人)拆床总榜[端游],起床战争(4队4人)胜利日榜[端游]">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="short icon" href="images/icon.ico" type="image/x-icon">
+    <title>Domcer - 排行榜</title>
+</head>
+
+<body>
+    <header>
+        <div class="navigationBar">
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">首页</a>
+                <a href="players.html" class="nav-link">玩家数据查询</a>
+                <a href="guild.html" class="nav-link">公会数据查询</a>
+                <a href="record.html" class="nav-link">玩家战绩查询</a>
+                <a href="ranking.html" class="nav-link">排行榜</a>
+            </div>
+            <div class="right-group">
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="搜索页面..." autocomplete="off">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <div id="searchDropdown" class="dropdown-content"></div>
+                </div>
+                <button class="btn" id="theme-toggle" aria-label="切换主题">
+                    <img src="images/sun.png" alt="切换主题" width="36" height="36" id="themeIcon">
+                </button>
+            </div>
+        </div>
+    </header>
+    <main class="ranking-main">
+        <div class="ranking-bg"></div>
+        <div class="ranking-decor-container">
+            <img src="images/diamond_sword.png" class="rank-decor decor-sword" alt="Sword">
+            <img src="images/bed.png" class="rank-decor decor-bed" alt="Bed">
+        </div>
+        <div class="main_title reveal" style="position: relative; z-index: 1;">
+            <div class="danmu-container"></div>
+            <h1>排行榜</h1>
+            <h2>综合排行榜</h2>
+            <div class="resource-grid reveal">
+                <div class="ranking-content-wrapper">
+                    <div class="resource-card reveal" id="bedwars-ranking-card">
+                        <img src="images/crown.png" alt="皇冠图标" width="56" height="56">
+                        <h3>起床战争排行榜</h3>
+
+                        <div id="ranking-podium" class="ranking-podium" style="display: none;">
+                        </div>
+
+                        <div class="ranking-controls"
+                            style="margin-top: 15px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                            <select id="bedwars-type-select"
+                                style="padding: 8px; border-radius: 6px; border: 1px solid var(--panel-border); background: var(--bg-color); color: var(--text-color);">
+                                <option value="levelTop">等级排行榜</option>
+                                <option value="winsTop">胜利总排行榜</option>
+                                <option value="winsWeeklyTop">胜利周排行榜</option>
+                                <option value="fkTop">最终击杀总榜</option>
+                                <option value="fkDailyTop">最终击杀每日总榜</option>
+                                <option value="fkWeeklyTop">最终击杀每周总榜</option>
+                                <option value="winsTopOne">单挑胜利总榜</option>
+                                <option value="winsDailyTopOne">单挑胜利日榜</option>
+                                <option value="winsWeeklyTopOne">单挑胜利周榜</option>
+                                <option value="fkTopOne">单挑最终击杀总榜</option>
+                                <option value="fkDailyTopOne">单挑最终击杀日榜</option>
+                                <option value="fkWeeklyTopOne">单挑最终击杀周榜</option>
+                                <option value="winsTopTwo">双人胜利总榜</option>
+                                <option value="winsDailyTopTwo">双人胜利日榜</option>
+                                <option value="winsWeeklyTopTwo">双人胜利周榜</option>
+                                <option value="fkTopTwo">双人最终击杀总榜</option>
+                                <option value="fkDailyTopTwo">双人最终击杀日榜</option>
+                                <option value="fkWeeklyTopTwo">双人最终击杀周榜</option>
+                                <option value="winsTopFour">4v4v4v4胜利总榜</option>
+                                <option value="winsDailyTopFour">4v4v4v4胜利日榜</option>
+                                <option value="winsWeeklyTopFour">4v4v4v4胜利周榜</option>
+                                <option value="fkTopFour">4v4v4v4最终击杀总榜</option>
+                                <option value="fkDailyTopFour">4v4v4v4最终击杀日榜</option>
+                                <option value="fkWeeklyTopFour">4v4v4v4最终击杀周榜</option>
+                                <option value="winsTopSpeedTwo">极速双人胜利总榜</option>
+                                <option value="winsDailyTopSpeedTwo">极速双人胜利日榜</option>
+                                <option value="winsWeeklyTopSpeedTwo">极速双人胜利周榜</option>
+                                <option value="fkTopSpeedTwo">极速双人最终击杀总榜</option>
+                                <option value="fkDailyTopSpeedTwo">极速双人最终击杀日榜</option>
+                                <option value="fkWeeklyTopSpeedTwo">极速双人最终击杀周榜</option>
+                                <option value="winsTopSpeedFour">极速4v4v4v4胜利总榜</option>
+                                <option value="winsDailyTopSpeedFour">极速4v4v4v4胜利日榜</option>
+                                <option value="winsWeeklyTopSpeedFour">极速4v4v4v4胜利周榜</option>
+                                <option value="fkTopSpeedFour">极速4v4v4v4最终击杀总榜</option>
+                                <option value="fkDailyTopSpeedFour">极速4v4v4v4最终击杀日榜</option>
+                                <option value="fkWeeklyTopSpeedFour">极速4v4v4v4最终击杀周榜</option>
+                                <option value="winsTopSkillTwo">超能力双人胜利总榜</option>
+                                <option value="winsDailyTopSkillTwo">超能力双人胜利日榜</option>
+                                <option value="winsWeeklyTopSkillTwo">超能力双人胜利周榜</option>
+                                <option value="fkTopSkillTwo">超能力双人最终击杀总榜</option>
+                                <option value="fkDailyTopSkillTwo">超能力双人最终击杀日榜</option>
+                                <option value="fkWeeklyTopSkillTwo">超能力双人最终击杀周榜</option>
+                                <option value="winsTopSkillFour">超能力4v4v4v4胜利总榜</option>
+                                <option value="winsDailyTopSkillFour">超能力4v4v4v4胜利日榜</option>
+                                <option value="winsWeeklyTopSkillFour">超能力4v4v4v4胜利周榜</option>
+                                <option value="fkTopSkillFour">超能力4v4v4v4最终击杀总榜</option>
+                                <option value="fkDailyTopSkillFour">超能力4v4v4v4最终击杀日榜</option>
+                                <option value="fkWeeklyTopSkillFour">超能力4v4v4v4最终击杀周榜</option>
+                            </select>
+                            <button id="fetch-bedwars-btn" class="ranking-btn">
+                                <i class="fa-solid fa-magnifying-glass"></i> 查询
+                            </button>
+                        </div>
+                        <div id="bedwars-ranking-list" class="ranking-list"
+                            style="text-align: left; max-height: 500px; overflow-y: auto;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class=""></div>
+        </div>
+        <div class="danmu-container"></div>
+        <script src="https://fastly.jsdelivr.net/npm/live2d-widgets@1.0.0/dist/autoload.js"></script>
+    </main>
+    <footer>
+        <div class="footer_content">
+            <div class="footer_box footer_left" id="leftfooter">
+                <h3>联系方式：</h3>
+                <p><i class="fa-brands fa-google" alt="Google"
+                        style="font-size: 17px; margin-right: 5px; gap: 100px">谷歌邮箱：</i></p>
+                <p>oldfourteen41@gmail.com</p>
+                <p><i class="fa-brands fa-qq" alt="QQ" style="font-size: 17px; margin-right: 5px; gap: 100px;"> QQ：</i>
+                </p>
+                <p>3474432820 / 1410146934</p>
+                <p><i class="fa-brands fa-bilibili" alt="Bilibili"
+                        style="font-size: 17px; margin-right: 5px; gap: 100px;"> 哔站链接：</i></p>
+                <p><a href="https://space.bilibili.com/470149931?spm_id_from=333.1007.0.0"
+                        class="bilibili-link">OldFourteenCN</a></p>
+            </div>
+            <div class="footer_box footer_center" id="centerfooter">
+                <h3>网站版权：</h3>
+                <p>本网站为非商用盈利性网站，所有功能均为DoMCer服务器官网API提供，仅做娱乐性质开发，无任何不良影响</p>
+                <p>本网站所有数据均来自于DoMCer服务器官网，不承担任何责任</p>
+            </div>
+            <div class="footer_box footer_right" id="rightfooter">
+                <h3>友情链接：</h3>
+                <p><a href="https://www.domcer.com/5th/" class="footer-link-1">DoMCer服务器官网</a></p>
+                <p><a href="https://www.minecraft.net/zh-hans" class="footer-link-2">Minecraft官网</a></p>
+                <p><a href="https://www.mcmod.cn/" class="footer-link-3">MCMOD官网</a></p>
+                <p><a href="https://www.minecraft.net/zh-hans/download" class="footer-link-4">Minecraft下载</a></p>
+            </div>
+        </div>
+    </footer>
+    <span class="js-cursor-container"></span>
+    <script src="js/app.js"></script>
+    <script src="js/mouseclick.js"></script>
+    <script src="js/mouseover.js"></script>
+</body>
+
+</html>
