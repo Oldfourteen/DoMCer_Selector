@@ -1205,6 +1205,8 @@ main {
     overflow: hidden;
     margin-bottom: -100px;
     /* 让下方内容部分重叠上来 */
+    background: url('../images/Minecraft.jpg') no-repeat center center;
+    background-size: cover;
 }
 
 .bg-video {
