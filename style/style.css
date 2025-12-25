@@ -1880,3 +1880,24 @@ a:focus-visible {
     gap: 10px;
     font-size: 14px;
 }
+
+/* ------------------------ 功能区：DOMCER图片展示样式 ------------------------ */
+.DOMCER {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px; /* 图片之间的间距 */
+    margin: 30px auto; /* 上下边距 */
+    flex-wrap: wrap; /* 允许在小屏幕换行 */
+}
+
+.DOMCER img {
+    height: 80px; /* 限制图片高度 */
+    width: auto;  /* 保持宽高比 */
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.DOMCER img:hover {
+    transform: translateY(-8px) scale(1.1); /* 鼠标悬停时上浮并放大 */
+}
