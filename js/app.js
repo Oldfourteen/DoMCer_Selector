@@ -367,7 +367,7 @@ if (searchBtnEl) {
             infoEl.style.display = "block";
             return;
         }
-        fetch(`http://api.domcer.com/player/getByName?key=${key}&name=${encodeURIComponent(name)}`)
+        fetch(`https://api.domcer.com/player/getByName?key=${key}&name=${encodeURIComponent(name)}`)
             .then(response => response.json())
             .then(res => {
                 if (res.status !== 200 || !res.data) {
@@ -470,7 +470,7 @@ if (searchBtnEl1) {
             infoEl_1.style.display = "block";
             return;
         }
-        fetch(`http://api.domcer.com/guild/findByName?key=${key}&name=${encodeURIComponent(name)}`)
+        fetch(`https://api.domcer.com/guild/findByName?key=${key}&name=${encodeURIComponent(name)}`)
             .then(response => response.json())
             .then(res => {
                 if (res.status !== 200 || !res.data) {
@@ -509,7 +509,7 @@ if(searchBtnEl2) {
             infoEl_1.style.display = "block";
             return;
         }
-        fetch(`http://api.domcer.com/guild/getById?key=${key}&id=${encodeURIComponent(name)}`)
+        fetch(`https://api.domcer.com/guild/getById?key=${key}&id=${encodeURIComponent(name)}`)
         .then(response => response.json())
         .then(res => {
             if(res.status !== 200 || !res.data){
@@ -593,7 +593,7 @@ if(searchBtn_4) {
             infoEl_1.style.display = "block";
             return;
         }
-        fetch(`http://api.domcer.com/stats/getAllStats?key=${key}&uuid=${encodeURIComponent(name)}`)
+        fetch(`https://api.domcer.com/stats/getAllStats?key=${key}&uuid=${encodeURIComponent(name)}`)
         .then(response => response.json())
         .then(res => {
             if(res.status !== 200 || !res.data){
@@ -707,7 +707,7 @@ if(searchBtn_5){
             infoEl_2.style.display = "block";
             return;
         }
-        fetch(`http://api.domcer.com/stats/getAllStats?key=${key}&uuid=${encodeURIComponent(name)}`)
+        fetch(`https://api.domcer.com/stats/getAllStats?key=${key}&uuid=${encodeURIComponent(name)}`)
         .then(response => response.json())
         .then(res => {
             if(res.status !== 200 || !res.data){
@@ -814,7 +814,7 @@ if(searchBtn_6){
             infoEl_3.style.display = "block";
             return;
         }
-        fetch(`http://api.domcer.com/stats/getAllStats?key=${key}&uuid=${encodeURIComponent(name)}`)
+        fetch(`https://api.domcer.com/stats/getAllStats?key=${key}&uuid=${encodeURIComponent(name)}`)
         .then(response => response.json())
         .then(res => {
             if(res.status !== 200 || !res.data){
@@ -1363,7 +1363,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             listContainer.innerHTML = '<div style="text-align:center; padding: 20px;">正在加载数据...</div>';
 
-            fetch(`http://api.domcer.com/leaderboard/bedwars?key=${apiKey}`)
+            fetch(`https://api.domcer.com/leaderboard/bedwars?key=${apiKey}`)
                 .then(response => response.json())
                 .then(res => {
                     if (res.status !== 200 || !res.data) {
