@@ -43,12 +43,31 @@
     </header>
     <main class="record-main">
         <div class="video-bg-container">
-            <video class="bg-video" autoplay loop muted playsinline poster="images/Minecraft.jpg">
+            <video class="bg-video" autoplay loop muted playsinline poster="images/Minecraft.jpg" id="bgVideo">
                 <source src="video/bedwars.mp4" type="video/mp4">
                 您的浏览器不支持 video 标签。
             </video>
             <div class="video-overlay"></div>
         </div>
+        <script>
+            // 视频加载错误处理
+            const video = document.getElementById('bgVideo');
+            video.addEventListener('error', function() {
+                console.error('Video failed to load, showing poster instead.');
+                // 视频加载失败时，保持海报显示，无需额外操作，浏览器默认行为即是如此
+                // 但可以添加额外的样式处理
+                this.style.display = 'none'; // 隐藏视频元素，只显示父容器背景（如果有）或者确保海报不被遮挡
+                // 注意：如果隐藏了 video，poster 也会消失。
+                // 所以更好的做法是保持 video 元素，但移除 source，或者让 poster 持续显示
+                // 这里我们选择不隐藏，但打印日志。
+                // 如果为了确保海报显示，可以重置 src 为空
+            }, true);
+            
+            // 监听停滞事件
+            video.addEventListener('stalled', function() {
+                console.warn('Video playback stalled (network issue likely).');
+            });
+        </script>
         <div class="record-content-wrapper">
             <div class="main_title reveal" style="position:relative; z-index: 2;">
                 <h1 id="recordTitle">玩家战绩查询</h1>
